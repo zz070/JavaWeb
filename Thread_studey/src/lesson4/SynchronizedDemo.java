@@ -6,7 +6,7 @@ public class SynchronizedDemo {
     public static synchronized void test1(){
 
     }
-    //同tset1_2()
+    //同tset1()
     public static void test1_2(){
         synchronized (SynchronizedDemo.class){
 
@@ -16,7 +16,7 @@ public class SynchronizedDemo {
     public synchronized void test2(){
 
     }
-    //同test2_2()
+    //同test2()
     public synchronized void test2_2(){
         synchronized (this){
 
