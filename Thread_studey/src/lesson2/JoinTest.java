@@ -1,4 +1,4 @@
-package Second;
+package lesson2;
 
 public class JoinTest {
     //先打印1到19，随机同时打印，最后打印main
