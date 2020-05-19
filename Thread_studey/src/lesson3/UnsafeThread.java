@@ -1,4 +1,4 @@
-package Third;
+package lesson3;
 
 public class UnsafeThread {
     //启动20个线程，每个线程执行10000次,每次循环将共享变量+1

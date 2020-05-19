@@ -1,4 +1,4 @@
-package Third;
+package lesson3;
 
 public class StopTest {
     private volatile static boolean IS_STOP;
