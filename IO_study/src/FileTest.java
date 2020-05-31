@@ -25,7 +25,7 @@ public class FileTest {
     }
     @Test
     public void t2(){
-        File f5 = new File("D:\\Workspaces\\Java15");
+        File f5 = new File("D:\\software\\IDEA\\IntelliJ IDEA 2020.1\\Project\\JavaWeb\\Thread_study");
         File[] children = f5.listFiles();//返回目录下一级的子文件/子文件夹数组
         for(File child : children)
             System.out.println(child.getName());//文件名
@@ -49,7 +49,7 @@ public class FileTest {
 
     @Test
     public void t3(){
-        File f5 = new File("D:\\Workspaces\\Java15");
+        File f5 = new File("D:\\software\\IDEA\\IntelliJ IDEA 2020.1\\Project\\JavaWeb");
         List<File> children = list(f5);//返回目录下一级的子文件/子文件夹数组
         for(File child : children)
             System.out.println(child.getName());//文件名
