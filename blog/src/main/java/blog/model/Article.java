@@ -5,6 +5,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -16,4 +17,7 @@ public class Article {
     private String content;
     private Integer userId;
     private Date createTime;
+    //新增文章时，传入的字段
+    private String userAccout;
+
 }
