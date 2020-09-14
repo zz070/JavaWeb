@@ -1,5 +1,7 @@
 package blog.servlet;
 
+import blog.dao.ArticleDAO;
+import blog.exception.BusinessException;
 import blog.model.Article;
 import blog.util.JSONUtil;
 
@@ -24,6 +26,11 @@ public class ArticleAddServlet extends AbstractBaseServlet {
         Article article = JSONUtil.deserialize(is,Article.class);
         //模拟数据库插入数据操作
         System.out.println("================================\n"+article);
+        int num = ArticleDAO.insert(article);
+        if(num != 1){
+            throw new BusinessException("001","插入文章错误");
+        }
+
         return null;
     }
 }

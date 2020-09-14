@@ -1,5 +1,8 @@
 package blog.servlet;
 
+import blog.dao.ArticleDAO;
+import blog.exception.BusinessException;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +14,10 @@ public class ArticleDeleteServlet extends AbstractBaseServlet{
         //ids = 1,2,3
         String idsString = req.getParameter("ids");
         int[] ids = parseIds(idsString);
+        int num = ArticleDAO.delete(ids);
+        if(num == 0){
+            throw new BusinessException("005","文章删除出错");
+        }
         //把ids传到数据库作删除操作
         return null;
     }

@@ -1,5 +1,7 @@
 package blog.servlet;
 
+import blog.dao.ArticleDAO;
+import blog.exception.BusinessException;
 import blog.exception.ClientException;
 import blog.model.Article;
 
@@ -20,18 +22,19 @@ public class ArticleDetailServlet  extends AbstractBaseServlet{
         }catch (Exception e){
             throw new ClientException("001","请求参数错误[id= "+id+"]");
         }
-        if(articleId == 1){
-            int i = 11/0;
+        Article article = ArticleDAO.query(articleId);
+        if(article == null){
+            throw new BusinessException("002","查询不到文章详情id = "+articleId);
         }
-        return  testData();//测试代码，以后替换为数据库根据文章id查询文章操作
+        return  article;//测试代码，以后替换为数据库根据文章id查询文章操作
     }
-    public static Article testData(){
-        Article a1 = new Article();
-        a1.setId(1);
-        a1.setTitle("Title");
-        a1.setContent("寒江孤影");
-        a1.setUserId(1);
-        a1.setCreateTime(new Date());
-        return a1;
-    }
+//    public static Article testData(){
+//        Article a1 = new Article();
+//        a1.setId(1);
+//        a1.setTitle("Title");
+//        a1.setContent("寒江孤影");
+//        a1.setUserId(1);
+//        a1.setCreateTime(new Date());
+//        return a1;
+//    }
 }
